@@ -38,7 +38,7 @@ La escena principal donde el usuario puede visualizar e interactuar con los obje
 
 - **Transición**: Regresa a **Menu Screen**.
 
-### 2.5 Info Screen
+### 2.5 Loading Screen
 En esta escena, el usuario presenta información adicional sobre la dimamica del recorrido AR.
 
 - **Transición**: Va a **AR Mode Screen**.
