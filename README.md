@@ -9,17 +9,30 @@ El proyecto sigue un flujo de scenes que permite al usuario navegar desde una pa
 ### 1.1 Welcome Screen
 Es la pantalla inicial que el usuario ve al abrir la aplicación. Contiene el logo y la introducción del proyecto, con la opción de continuar al menú principal.
 
-### 1.2 Menu Screen
-Desde el menú principal, el usuario puede navegar a las diferentes funcionalidades de la aplicación, como iniciar el modo AR o consultar información adicional.
+- **Transición**: Va a **Menu Screen**.
 
-### 1.3 Loading Screen
-Pantalla de carga que aparece mientras se preparan los recursos de la aplicación (modelos 3D, scripts, etc.). Permite una transición fluida entre el menú y el modo AR.
+### 1.2 Menu Screen
+Desde el menú principal, el usuario puede navegar a las diferentes funcionalidades de la aplicación, como iniciar el modo AR, aplicar máscaras o consultar información adicional. También tiene la opción de cerrar la aplicación.
+
+- **Transiciones**:
+  - Va a **Mask Screen**.
+  - Va a **AR Mode Screen**.
+  - Puede cerrar la aplicación.
+
+### 1.3 Mask Screen
+En esta escena, el usuario puede aplicar máscaras u otros filtros relacionados con los objetos históricos que está visualizando, ofreciendo una experiencia más interactiva.
+
+- **Transición**: Regresa a **Menu Screen**.
 
 ### 1.4 AR Mode Screen
 La escena principal donde el usuario puede visualizar e interactuar con los objetos históricos en realidad aumentada, utilizando la cámara de su dispositivo.
 
-### 1.5 Mask Screen
-En esta escena, el usuario puede aplicar máscaras u otros filtros relacionados con los objetos históricos que está visualizando, ofreciendo una experiencia más interactiva.
+- **Transición**: Regresa a **Menu Screen**.
+
+### 1.5 Info Screen
+En esta escena, el usuario puede consultar información adicional sobre los objetos históricos.
+
+- **Transición**: Va a **AR Mode Screen**.
 
 ## 2. Requerimientos de Modelos
 
@@ -56,15 +69,14 @@ A continuación, se muestra una imagen de referencia para configurar el script e
 
 Para garantizar un rendimiento adecuado, la aplicación requiere que los dispositivos móviles o tablets cumplan con las siguientes características mínimas:
 
-# Android:
-- **Sistema Operativo**: Sistema operativo Android 9 o superior..
-- **Resolucion Preferia**: 720 x 1280 píxeles.
+### Android:
+- **Sistema Operativo**: Sistema operativo Android 9 o superior.
+- **Resolución Preferida**: 720 x 1280 píxeles.
 - **Procesador**: Octa-core 1.8 GHz o superior.
 - **RAM**: 3 GB o más.
 - **Almacenamiento**: Al menos 500 MB de espacio libre.
 - **Cámara**: Resolución mínima de 8 MP para una mejor experiencia en realidad aumentada.
 - **Compatibilidad con ARCore o ARKit**: Es necesario que el dispositivo soporte las tecnologías AR de Google o Apple para una experiencia óptima.
-
 
 ---
 
