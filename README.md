@@ -25,7 +25,7 @@ Desde el menú principal, el usuario puede navegar a las diferentes funcionalida
 - **Transiciones**:
   - Va a **Mask Screen**.
   - Va a **AR Mode Screen**.
-  - Va a **Info Screen**. (solo una vez por sesion)
+  - Va a **Loading Screen**. (solo una vez por sesion)
   - Puede cerrar la aplicación.
 
 ### 2.3 Mask Screen
