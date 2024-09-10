@@ -17,6 +17,7 @@ Desde el menú principal, el usuario puede navegar a las diferentes funcionalida
 - **Transiciones**:
   - Va a **Mask Screen**.
   - Va a **AR Mode Screen**.
+  - Va a **Info Screen**. (solo una vez por sescion)
   - Puede cerrar la aplicación.
 
 ### 1.3 Mask Screen
@@ -48,22 +49,21 @@ Los modelos con los que el usuario puede interactuar deben incluir ciertos eleme
 
 ## 3. Scripts para Objetos Interactuables
 
-### 3.1 Asignación de Scripts a los Modelos
+### 3.1 Asignación de Elementos a los Modelos
 
-Cada objeto interactuable debe tener asignado un script específico que gestione su comportamiento en la aplicación. Los elementos principales del script son:
+Cada objeto interactuable debe tener asignado algunos scripts específicos que gestione su comportamiento en la aplicación. Los elementos son:
 
-- **ObjectData**: Un componente para gestionar la información (audio, imagen, título, descripción) que se mostrará al usuario.
-- **Collider**: Para detectar la interacción del usuario con el objeto en el modo AR.
+- **Collider**: Para detectar la interacción del usuario con el objeto en el modo AR. (preferencia Box Collider)
+- **ObjectData**: Un Script para gestionar la información (audio, imagen, título, descripción) que se mostrará al usuario.  
+- **ProximityInfoDisplay**: Un Script para gestionar la interacción del usuario con el objeto en el modo AR. 
 
 #### Instrucciones para Asignar el Script:
 1. Selecciona el modelo en el editor de Unity.
-2. En la ventana de inspección, haz clic en `Add Component` y busca el script `ObjectData`.
-3. Asigna los valores necesarios (audio, imagen, título, descripción) a los campos correspondientes del script.
-4. Asegúrate de que el modelo tiene un `Collider` adecuado para detectar las interacciones del usuario.
+2. Asegúrate de que el modelo tiene un `Collider` adecuado para detectar las interacciones del usuario.
+3. En la ventana de inspección, haz clic en `Add Component` y busca el script `ObjectData` &`ProximityInfoDisplay` o ir a la carpte Scripts y asignarlos directamente.
+4. Asigna los valores necesarios (audio, imagen, título, descripción) a los campos correspondientes del script ObjectData.
 
 A continuación, se muestra una imagen de referencia para configurar el script en Unity:
-
-![Instrucciones para agregar script](ruta-de-la-imagen)
 
 ## 4. Requisitos Mínimos de Dispositivos
 
