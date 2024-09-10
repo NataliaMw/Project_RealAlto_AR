@@ -89,7 +89,7 @@ Para garantizar un rendimiento adecuado, la aplicación requiere que los disposi
 - **Sistema Operativo**: Sistema operativo Android 9 o superior.
 - **Resolución Preferida**: 720 x 1280 píxeles.
 - **Procesador**: Octa-core 1.8 GHz o superior.
-- **RAM**: 3 GB o más.
+- **RAM**: 2 GB o más.
 - **Almacenamiento**: Al menos 500 MB de espacio libre.
 - **Cámara**: Resolución mínima de 8 MP para una mejor experiencia en realidad aumentada.
 - **Compatibilidad con ARCore o ARKit**: Es necesario que el dispositivo soporte las tecnologías AR de Google.
