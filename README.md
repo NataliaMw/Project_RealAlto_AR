@@ -2,54 +2,62 @@
 
 Este proyecto es una aplicación en realidad aumentada (AR) para dispositivos móviles y tablets, diseñada para presentar objetos históricos en un entorno interactivo y educativo. A continuación se explican los aspectos principales del flujo del proyecto, los requerimientos de modelos y las características técnicas necesarias para su ejecución.
 
-## 1. Flujo de las Scenes
+## 1. Carpetas en el Proyecto
+Dento de la carpeta `Assets` se ecuenta la siguientes carpteas que forman parte de lo que se necesita para el proyecto.
+
+- **Resources**: Carpteta donde estan todos los recursos para ser usados.
+- **Scenes**: Carpeta que contiene las `scene` que pertenecen al proyecto.
+- **Scripts**: Carpeta con los Scripts (codigos) que se usan en el proyecto.
+  
+
+## 2. Flujo de las Scenes
 
 El proyecto sigue un flujo de scenes que permite al usuario navegar desde una pantalla de bienvenida hasta interactuar con objetos en un entorno AR.
 
-### 1.1 Welcome Screen
-Es la pantalla inicial que el usuario ve al abrir la aplicación. Contiene el logo y la introducción del proyecto, con la opción de continuar al menú principal.
+### 2.1 Welcome Screen
+Es la pantalla inicial que el usuario ve al abrir la aplicación. Contiene el logo, con la opción de continuar automaticamente al menú principal.
 
 - **Transición**: Va a **Menu Screen**.
 
-### 1.2 Menu Screen
-Desde el menú principal, el usuario puede navegar a las diferentes funcionalidades de la aplicación, como iniciar el modo AR, aplicar máscaras o consultar información adicional. También tiene la opción de cerrar la aplicación.
+### 2.2 Menu Screen
+Desde el menú principal, el usuario puede navegar a las diferentes funcionalidades de la aplicación, como iniciar el modo AR, aplicar máscaras. También tiene la opción de cerrar la aplicación.
 
 - **Transiciones**:
   - Va a **Mask Screen**.
   - Va a **AR Mode Screen**.
-  - Va a **Info Screen**. (solo una vez por sescion)
+  - Va a **Info Screen**. (solo una vez por sesion)
   - Puede cerrar la aplicación.
 
-### 1.3 Mask Screen
-En esta escena, el usuario puede aplicar máscaras u otros filtros relacionados con los objetos históricos que está visualizando, ofreciendo una experiencia más interactiva.
+### 2.3 Mask Screen
+En esta escena, el usuario puede aplicar máscaras/filtros relacionados con la cultura valdivia u otras culturas históricas que está visualizando, ofreciendo una experiencia más interactiva.
 
 - **Transición**: Regresa a **Menu Screen**.
 
-### 1.4 AR Mode Screen
-La escena principal donde el usuario puede visualizar e interactuar con los objetos históricos en realidad aumentada, utilizando la cámara de su dispositivo.
+### 2.4 AR Mode Screen
+La escena principal donde el usuario puede visualizar e interactuar con los objetos históricos en realidad aumentada, utilizando la cámara de su dispositivo y la pantalla.
 
 - **Transición**: Regresa a **Menu Screen**.
 
-### 1.5 Info Screen
-En esta escena, el usuario puede consultar información adicional sobre los objetos históricos.
+### 2.5 Info Screen
+En esta escena, el usuario presenta información adicional sobre la dimamica del recorrido AR.
 
 - **Transición**: Va a **AR Mode Screen**.
 
-## 2. Requerimientos de Modelos
+## 3. Requerimientos de Modelos
 
-### 2.1 Formato de los Modelos
+### 3.1 Formato de los Modelos
 Los modelos 3D que se asignen en la aplicación deben estar en formato `.fbx`, el cual es compatible con Unity y la mayoría de las plataformas de AR. Asegúrate de que los modelos estén optimizados para un buen rendimiento en dispositivos móviles.
 
-### 2.2 Modelos Interactuables
+### 3.2 Modelos Interactuables
 Los modelos con los que el usuario puede interactuar deben incluir ciertos elementos adicionales para una experiencia completa. Estos elementos son:
 - **Audio**: Un archivo de audio que proporciona información o una narración sobre el objeto.
 - **Imagen**: Una imagen de referencia o información visual del objeto.
 - **Título**: El nombre del objeto histórico.
 - **Descripción**: Información detallada sobre el objeto, que se mostrará cuando el usuario interactúe con él.
 
-## 3. Scripts para Objetos Interactuables
+## 4. Scripts para Objetos Interactuables
 
-### 3.1 Asignación de Elementos a los Modelos
+### 4.1 Asignación de Elementos a los Modelos
 
 Cada objeto interactuable debe tener asignado algunos scripts específicos que gestione su comportamiento en la aplicación. Los elementos son:
 
@@ -57,15 +65,23 @@ Cada objeto interactuable debe tener asignado algunos scripts específicos que g
 - **ObjectData**: Un Script para gestionar la información (audio, imagen, título, descripción) que se mostrará al usuario.  
 - **ProximityInfoDisplay**: Un Script para gestionar la interacción del usuario con el objeto en el modo AR. 
 
-#### Instrucciones para Asignar el Script:
+#### 4.2 Instrucciones para Asignar el Script:
 1. Selecciona el modelo en el editor de Unity.
 2. Asegúrate de que el modelo tiene un `Collider` adecuado para detectar las interacciones del usuario.
-3. En la ventana de inspección, haz clic en `Add Component` y busca el script `ObjectData` &`ProximityInfoDisplay` o ir a la carpte Scripts y asignarlos directamente.
-4. Asigna los valores necesarios (audio, imagen, título, descripción) a los campos correspondientes del script ObjectData.
+3. En la ventana de inspección, haz clic en `Add Component` y busca el script `ObjectData` &`ProximityInfoDisplay` o ir a la carpeta Scripts y asignarlos directamente.
+4. Asigna los valores necesarios (audio, imagen, título, descripción) a los campos correspondientes del script `ObjectData`.
 
 A continuación, se muestra una imagen de referencia para configurar el script en Unity:
 
-## 4. Requisitos Mínimos de Dispositivos
+## 5. Configuracion para las Mascaras
+Para poder asignar mas mascaras se debe cumplir los siguientes requesitos.
+- En el Inspector en Unity se debe crear un objeto tipo `Empty`
+- En el `GameObject`creado hacer clic en `Add Component` y busca el script `AR Face` para asignarlo.
+- En `Transform` resetear los valores de `position` o ponerlos en cero manualmente.
+- Insertar la mascara como hijo del GameObject (se vuelve un prefab).
+- Guardar el prefabs en la carpeta Prefabs en `Resources`.
+
+## 6. Requisitos Mínimos de Dispositivos
 
 Para garantizar un rendimiento adecuado, la aplicación requiere que los dispositivos móviles o tablets cumplan con las siguientes características mínimas:
 
