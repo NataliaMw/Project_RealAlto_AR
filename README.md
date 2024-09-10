@@ -65,7 +65,7 @@ Cada objeto interactuable debe tener asignado algunos scripts específicos que g
 - **ObjectData**: Un Script para gestionar la información (audio, imagen, título, descripción) que se mostrará al usuario.  
 - **ProximityInfoDisplay**: Un Script para gestionar la interacción del usuario con el objeto en el modo AR. 
 
-#### 4.2 Instrucciones para Asignar el Script:
+#### 4.2 Instrucciones para configuracion de los modelos interactuables:
 1. Selecciona el modelo en el editor de Unity.
 2. Asegúrate de que el modelo tiene un `Collider` adecuado para detectar las interacciones del usuario.
 3. En la ventana de inspección, haz clic en `Add Component` y busca el script `ObjectData` &`ProximityInfoDisplay` o ir a la carpeta Scripts y asignarlos directamente.
@@ -92,7 +92,7 @@ Para garantizar un rendimiento adecuado, la aplicación requiere que los disposi
 - **RAM**: 3 GB o más.
 - **Almacenamiento**: Al menos 500 MB de espacio libre.
 - **Cámara**: Resolución mínima de 8 MP para una mejor experiencia en realidad aumentada.
-- **Compatibilidad con ARCore o ARKit**: Es necesario que el dispositivo soporte las tecnologías AR de Google o Apple para una experiencia óptima.
+- **Compatibilidad con ARCore o ARKit**: Es necesario que el dispositivo soporte las tecnologías AR de Google.
 
 ---
 
