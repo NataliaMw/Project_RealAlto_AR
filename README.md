@@ -56,12 +56,15 @@ A continuación, se muestra una imagen de referencia para configurar el script e
 
 Para garantizar un rendimiento adecuado, la aplicación requiere que los dispositivos móviles o tablets cumplan con las siguientes características mínimas:
 
-- **Sistema Operativo**: Android 7.0 o superior, iOS 11.0 o superior.
+#Android:
+- **Sistema Operativo**: Sistema operativo Android 9 o superior..
+- **Resolución Compatibilidad: 720 x 1280 píxeles.
 - **Procesador**: Octa-core 1.8 GHz o superior.
 - **RAM**: 3 GB o más.
 - **Almacenamiento**: Al menos 500 MB de espacio libre.
 - **Cámara**: Resolución mínima de 8 MP para una mejor experiencia en realidad aumentada.
 - **Compatibilidad con ARCore o ARKit**: Es necesario que el dispositivo soporte las tecnologías AR de Google o Apple para una experiencia óptima.
+
 
 ---
 
