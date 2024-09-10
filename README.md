@@ -56,9 +56,9 @@ A continuación, se muestra una imagen de referencia para configurar el script e
 
 Para garantizar un rendimiento adecuado, la aplicación requiere que los dispositivos móviles o tablets cumplan con las siguientes características mínimas:
 
-#Android:
+# Android:
 - **Sistema Operativo**: Sistema operativo Android 9 o superior..
-- **Resolución Compatibilidad: 720 x 1280 píxeles. minimo
+- **Resolucion Preferia**: 720 x 1280 píxeles.
 - **Procesador**: Octa-core 1.8 GHz o superior.
 - **RAM**: 3 GB o más.
 - **Almacenamiento**: Al menos 500 MB de espacio libre.
