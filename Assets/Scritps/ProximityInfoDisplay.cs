@@ -7,19 +7,27 @@ using UnityEngine.InputSystem;
 
 public class ProximityInfoDisplay : MonoBehaviour
 {
-    // Distancia de activacion en metros
+    // Distancia de activación en metros
+    public float activationDistance = 2f;
+
+    // Determina si el objeto está cerca
     public bool isNear = false;
 
-    public GameObject cameraContainer;
+    public GameObject cameraContainer; // Contenedor de la cámara principal
 
-    private GameObject panel; // Panel que presenta la informacion
-    private bool isPanelVisible = false; // Boolean para saber si el panel esta activo
-    private ObjectData dataStore; // Informacion de objeto para ser usada
+    private GameObject panel; // Panel que presenta la información
+    private bool isPanelVisible = false; // Boolean para saber si el panel está activo
+    private ObjectData dataStore; // Información del objeto para ser usada
     private DataPanelController dataPanelController; // Controlador del panel que presenta la data
     private Collider objectCollider; // Collider del objeto para detectar el toque
 
+    private Camera mainCamera; // Cámara principal para calcular la proximidad
+
     void Start()
     {
+        // Obtiene la referencia de la cámara principal
+        mainCamera = Camera.main;
+
         // Obtiene el collider del objeto
         objectCollider = GetComponent<Collider>();
         if (!objectCollider)
@@ -30,16 +38,17 @@ public class ProximityInfoDisplay : MonoBehaviour
 
     void Update()
     {
-        // Verifica si el objeto esta dentro del rango de activacion
-        if (isNear)
+        // Calcula la distancia entre la cámara y el objeto
+        float distanceToCamera = Vector3.Distance(transform.position, mainCamera.transform.position);
+
+        // Verifica si el objeto está dentro del rango de activación
+        if (distanceToCamera <= activationDistance && isNear)
         {
             // Verifica si la pantalla es tocada
             if (Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
             {
-
-                // Crea un rayo desde la posicion del toque en la pantalla
-                Ray ray = Camera.main.ScreenPointToRay(Touchscreen.current.primaryTouch.position.ReadValue());                
-                
+                // Crea un rayo desde la posición del toque en la pantalla
+                Ray ray = Camera.main.ScreenPointToRay(Touchscreen.current.primaryTouch.position.ReadValue());
                 RaycastHit hit;
 
                 // Realiza un raycast para verificar si el objeto fue golpeado
@@ -48,10 +57,10 @@ public class ProximityInfoDisplay : MonoBehaviour
                     // Verifica si el objeto golpeado es este objeto
                     if (hit.transform == transform)
                     {
-                        // Llama a la funcion para visualizar el panel
+                        // Llama a la función para visualizar el panel
                         TogglePanel();
 
-                        // Cambia el estado del booleano para determinar que se interactuo con el objeto
+                        // Cambia el estado del booleano para determinar que se interactuó con el objeto
                         ObjectData objectInteraction = hit.transform.GetComponent<ObjectData>();
                         if (objectInteraction != null)
                         {
@@ -61,16 +70,16 @@ public class ProximityInfoDisplay : MonoBehaviour
                 }
             }
         }
-        // else if (isPanelVisible)
-        // {
-        //     // Si el panel esta visible pero el objeto esta fuera del rango, reactivar el collider
-        //     ToggleColliderState(true);
-        // }
+        else if (isPanelVisible && distanceToCamera > activationDistance)
+        {
+            // Cierra el panel si el objeto está fuera del rango
+            TogglePanel();
+        }
     }
 
     private void TogglePanel()
     {
-        // Busca el panel de informacion si no se ha asignado
+        // Busca el panel de información si no se ha asignado
         if (!panel)
         {
             panel = GameObject.Find("Panel Information");
@@ -89,7 +98,7 @@ public class ProximityInfoDisplay : MonoBehaviour
         }
 
         // Alterna la visibilidad del panel
-        if (isPanelVisible && !isNear)
+        if (isPanelVisible)
         {
             dataPanelController.HidePanel(); // Oculta el panel
             isPanelVisible = false;
@@ -98,13 +107,12 @@ public class ProximityInfoDisplay : MonoBehaviour
         {
             dataPanelController.ShowPanel(dataStore.title, dataStore.description, dataStore.audioClip); // Muestra el panel
             isPanelVisible = true;
-            // ToggleColliderState(false); // Desactiva el collider
         }
     }
 
     private void ToggleColliderState(bool state)
     {
-        // Cambia el estado del collider basado en el parametro state
+        // Cambia el estado del collider basado en el parámetro state
         objectCollider.enabled = state;
     }
 }
