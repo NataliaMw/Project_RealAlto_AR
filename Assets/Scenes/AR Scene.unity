@@ -495,7 +495,7 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: 1f8a2a07a8e43f04fbc7abc9f3f9caf0, type: 3}
   title: 'Choza '
   description: Choza tipo S39
-  objectImage: {fileID: 2092835665, guid: 6e5193fcc988fc249b386701990c85a4, type: 3}
+  objectImage: {fileID: 0}
   isInteracted: 0
 --- !u!1001 &76351954
 PrefabInstance:
@@ -7081,7 +7081,7 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: d683ae067480dba4ebe77676f24b72de, type: 3}
   title: Casa de las Reuniones
   description: Casa de las Reuniones
-  objectImage: {fileID: 2092835665, guid: 6e5193fcc988fc249b386701990c85a4, type: 3}
+  objectImage: {fileID: 0}
   isInteracted: 0
 --- !u!65 &1407673879
 BoxCollider:
@@ -9994,7 +9994,7 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: 18974bae62f71b243b20e595bf277c51, type: 3}
   title: Casa del Osario
   description: Casa del Osario
-  objectImage: {fileID: 2092835665, guid: 6e5193fcc988fc249b386701990c85a4, type: 3}
+  objectImage: {fileID: 0}
   isInteracted: 0
 --- !u!1001 &2064649406
 PrefabInstance:

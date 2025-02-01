@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.IO;
+using UnityEngine.Android; // Para gestionar permisos en Android
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class CaptureImage : MonoBehaviour
 {
@@ -25,7 +27,8 @@ public class CaptureImage : MonoBehaviour
         {
             whiteScreenEffect.gameObject.SetActive(false); // Asegurarse de que el efecto blanco esté desactivado al inicio
         }
-
+        // Pedir permisos de almacenamiento en Android (necesario desde Android 10+)
+        RequestStoragePermission();
     }
 
     // Metodo publico que puede ser llamado para capturar una imagen
@@ -90,18 +93,18 @@ public class CaptureImage : MonoBehaviour
         // Guardar la imagen en el directorio persistente de la aplicacion
         File.WriteAllBytes(filePath, bytes);
 
-        // Llamar al metodo para guardar la imagen en la galeria
-        SaveToGallery(filePath, fileName);
+         // Guardar la imagen en la galería
+        StartCoroutine(SaveToGallery(filePath, fileName));
 
         // Mensaje de depuracion para indicar que la foto se ha guardado
         Debug.Log($"Photo saved at: {filePath}");
     }
 
     // Metodo para guardar la imagen en la galeria del dispositivo
-    private void SaveToGallery(string filePath, string fileName)
+    private IEnumerator SaveToGallery(string filePath, string fileName)
     {
         // Crear el directorio para las imagenes en la galeria si no existe
-        string galleryPath = Path.Combine(Application.persistentDataPath, "..", "Pictures", "Real Alto");
+        string galleryPath = Path.Combine("/storage/emulated/0/Pictures/Real Alto");
         if (!Directory.Exists(galleryPath))
         {
             Directory.CreateDirectory(galleryPath);
@@ -111,7 +114,24 @@ public class CaptureImage : MonoBehaviour
         string destinationPath = Path.Combine(galleryPath, fileName);
         File.Copy(filePath, destinationPath, true);
 
+        // Notificar al sistema Android para que indexe la imagen en la galería
+        using (AndroidJavaClass mediaScanner = new AndroidJavaClass("android.media.MediaScannerConnection"))
+        using (AndroidJavaClass unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+        {
+            AndroidJavaObject currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+            mediaScanner.CallStatic("scanFile", currentActivity, new string[] { destinationPath }, null, null);
+        }
+
         // Mensaje de depuracion para indicar que la foto se ha copiado a la galeria
         Debug.Log($"Photo copied to gallery at: {destinationPath}");
+        yield return null;
+    }
+
+    private void RequestStoragePermission()
+    {
+        if (!Permission.HasUserAuthorizedPermission(Permission.ExternalStorageWrite))
+        {
+            Permission.RequestUserPermission(Permission.ExternalStorageWrite);
+        }
     }
 }
