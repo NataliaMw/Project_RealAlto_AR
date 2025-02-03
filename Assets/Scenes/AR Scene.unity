@@ -439,64 +439,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f8867dde363fa3b40a617a243b357b58, type: 3}
   m_PrefabInstance: {fileID: 1609874636}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &64480639 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4323001597608523538, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
-  m_PrefabInstance: {fileID: 140022355}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &64480642
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64480639}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.008342384, y: 0.018236775, z: 0.005983985}
-  m_Center: {x: -0.013328417, y: 0.007949698, z: -0.08813284}
---- !u!114 &64480643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64480639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a7dd4aedd6f0324b8a4dbd6317b0703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationDistance: 2
-  isNear: 0
-  cameraContainer: {fileID: 1828658940}
---- !u!114 &64480644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64480639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6cb1c7ccad78d4d97587b13d8314f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 1f8a2a07a8e43f04fbc7abc9f3f9caf0, type: 3}
-  title: 'Choza '
-  description: Choza tipo S39
-  objectImage: {fileID: 0}
-  isInteracted: 0
 --- !u!1001 &76351954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1089,15 +1031,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 955128106}
-    - targetCorrespondingSourceObject: {fileID: 4323001597608523538, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 64480642}
-    - targetCorrespondingSourceObject: {fileID: 4323001597608523538, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
+      addedObject: {fileID: 955128108}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 64480644}
-    - targetCorrespondingSourceObject: {fileID: 4323001597608523538, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
+      addedObject: {fileID: 955128107}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 64480643}
+      addedObject: {fileID: 955128111}
   m_SourcePrefab: {fileID: 100100000, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
 --- !u!1 &164153391
 GameObject:
@@ -1985,6 +1927,59 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &447227487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447227484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7dd4aedd6f0324b8a4dbd6317b0703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationDistance: 2
+  isNear: 0
+  cameraContainer: {fileID: 1828658940}
+--- !u!114 &447227488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447227484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6cb1c7ccad78d4d97587b13d8314f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 31e7ee52f8f444d4b8226503cd4cfc3d, type: 3}
+  title: Casa de las Reuniones
+  description: Casa de las Reuniones
+  objectImage: {fileID: 0}
+  isInteracted: 0
+--- !u!65 &447227491
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447227484}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6584061, y: 1.7829486, z: 0.55978525}
+  m_Center: {x: 0.016776167, y: 0.9080211, z: 0.007742581}
 --- !u!1 &450235587
 GameObject:
   m_ObjectHideFlags: 0
@@ -4712,6 +4707,59 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &955128107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955128102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7dd4aedd6f0324b8a4dbd6317b0703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationDistance: 2
+  isNear: 0
+  cameraContainer: {fileID: 1828658940}
+--- !u!114 &955128108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955128102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6cb1c7ccad78d4d97587b13d8314f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 9cfa7ddc3f92547b8b7533d2b28a73dd, type: 3}
+  title: 'Choza '
+  description: Choza tipo S39
+  objectImage: {fileID: 0}
+  isInteracted: 0
+--- !u!65 &955128111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955128102}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.63461757, y: 1.8527001, z: 1}
+  m_Center: {x: 0.0032918323, y: 0.9491083, z: 0}
 --- !u!1 &955930886
 GameObject:
   m_ObjectHideFlags: 0
@@ -7061,64 +7109,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1493439757}
   m_SourcePrefab: {fileID: 100100000, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
---- !u!1 &1407673875 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4323001597608523538, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
-  m_PrefabInstance: {fileID: 1704256239}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1407673878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407673875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6cb1c7ccad78d4d97587b13d8314f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: d683ae067480dba4ebe77676f24b72de, type: 3}
-  title: Casa de las Reuniones
-  description: Casa de las Reuniones
-  objectImage: {fileID: 0}
-  isInteracted: 0
---- !u!65 &1407673879
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407673875}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.008342387, y: 0.018236773, z: 0.0059839864}
-  m_Center: {x: -0.013328415, y: 0.007949699, z: -0.08813284}
---- !u!114 &1407673880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407673875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a7dd4aedd6f0324b8a4dbd6317b0703, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationDistance: 2
-  isNear: 0
-  cameraContainer: {fileID: 1828658940}
 --- !u!1 &1410862888 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b87214d3615dce4488dbeaa2a4e053aa, type: 3}
@@ -7522,7 +7512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6cb1c7ccad78d4d97587b13d8314f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 6322fc55a77e963449094165908b8973, type: 3}
+  audioClip: {fileID: 8300000, guid: b23f9accd537242aa9ecf1d5e65196df, type: 3}
   title: 'Choza '
   description: Choza de la Fase 1
   objectImage: {fileID: 0}
@@ -8631,6 +8621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Habitante Informador
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
+      propertyPath: m_TagString
+      value: Habitante
+      objectReference: {fileID: 0}
     - target: {fileID: 4106759949635328343, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.34
@@ -8646,15 +8640,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 447227486}
-    - targetCorrespondingSourceObject: {fileID: 4323001597608523538, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1407673879}
-    - targetCorrespondingSourceObject: {fileID: 4323001597608523538, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
+      addedObject: {fileID: 447227491}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1407673878}
-    - targetCorrespondingSourceObject: {fileID: 4323001597608523538, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
+      addedObject: {fileID: 447227488}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1407673880}
+      addedObject: {fileID: 447227487}
   m_SourcePrefab: {fileID: 100100000, guid: 1fddd2232de7b1b48bb10af80ba6c4b4, type: 3}
 --- !u!1 &1714913649
 GameObject:
@@ -9941,8 +9935,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.48590162, y: 1.7095436, z: 0.43916574}
-  m_Center: {x: 0.023368819, y: 0.8513988, z: 0.004248588}
+  m_Size: {x: 0.63229704, y: 1.7095436, z: 0.43916574}
+  m_Center: {x: 0.011461082, y: 0.8513988, z: 0.004248595}
 --- !u!95 &2012772282
 Animator:
   serializedVersion: 5
@@ -9991,7 +9985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6cb1c7ccad78d4d97587b13d8314f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 18974bae62f71b243b20e595bf277c51, type: 3}
+  audioClip: {fileID: 8300000, guid: 68e7dfe369ca549f1b2779702848ee94, type: 3}
   title: Casa del Osario
   description: Casa del Osario
   objectImage: {fileID: 0}

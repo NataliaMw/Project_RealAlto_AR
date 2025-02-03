@@ -81,7 +81,10 @@ public class DataPanelController : MonoBehaviour
         // Limpiar los textos y datos
         titleText.text = "";
         descriptionText.text = "";
-        audioSource.clip = null;
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
         currentTimeText.text = "00:00";
         totalTimeText.text = "00:00";
         progressBar.value = 0;
@@ -92,7 +95,7 @@ public class DataPanelController : MonoBehaviour
     private void OnProgressBarChanged(float value)
     {
         // Cambiar el tiempo del audio al mover el slider
-        if (audioSource.clip != null)
+        if (audioSource.clip != null && audioSource.isPlaying) 
         {
             audioSource.time = value * audioSource.clip.length;
         }
@@ -126,7 +129,10 @@ public class DataPanelController : MonoBehaviour
         // Limpiar los textos y datos
         titleText.text = "";
         descriptionText.text = "";
-        audioSource.clip = null;
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
         currentTimeText.text = "00:00";
         totalTimeText.text = "00:00";
         progressBar.value = 0;
