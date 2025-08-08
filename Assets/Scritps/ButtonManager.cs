@@ -10,52 +10,22 @@ public class ButtonManager : MonoBehaviour
 
     private void Start()
     {
-        // Verifica si allChallengesCompleted es true o false
-        if (GameStateManager.Instance.allChallengesCompleted)
+        // Habilita todos los botones de las máscaras para que sean utilizables.
+        foreach (Button button in buttons)
         {
-            // Si todos los desafíos están completos, habilita todos los botones
-            foreach (Button button in buttons)
-            {
-                button.interactable = true; // habilta los botones de mascaras
-
-            }
-
-            masksButton.SetActive(true); // habilita el boton de cambio de mascaras
-
-            // Desactiva el panel de cerrar porque todos los desafíos están completados
-            closePanel.SetActive(false);
-
+            button.interactable = true;
         }
-        else
+
+        // Habilita el botón para cambiar entre los paneles de máscaras.
+        if (masksButton != null)
         {
-            
-            int completedChallenges = GameStateManager.Instance.ChallengerDoneCount;
+            masksButton.SetActive(true);
+        }
 
-            // Verifica y habilita los botones de acuerdo al valor de ChallengerDoneCount
-            for (int i = 0; i < buttons.Length; i++)
-            {
-                if (i < completedChallenges)
-                {
-                    buttons[i].interactable = true;
-                }
-                else
-                {
-                    buttons[i].interactable = false;
-                }
-            }
-
-            //acvtiva la primera mascara
-            buttons[0].interactable = true;
-
-
-            // Activa el panel de cerrar porque aún hay desafíos por completar
-            closePanel.SetActive(true);
-
-            // Asigna la función de cerrar al botón de cerrar
-            closeButton.onClick.AddListener(ClosePanel);
-
-            // desactivamos el boton de las mascaras adicionales
-            masksButton.SetActive(false);
+        // Desactiva el panel de mensaje de "desafío" ya que no es necesario.
+        if (closePanel != null)
+        {
+            closePanel.SetActive(false);
         }
     }
 
