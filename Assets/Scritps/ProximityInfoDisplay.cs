@@ -105,6 +105,8 @@ public class ProximityInfoDisplay : MonoBehaviour
         }
         else
         {
+            if (!dataPanelController) dataPanelController = panel.GetComponent<DataPanelController>();
+            dataPanelController.lastCaller = null;   // <- asegura que al cerrar NO abra visor
             dataPanelController.ShowPanel(dataStore.title, dataStore.description, dataStore.audioClip); // Muestra el panel
             isPanelVisible = true;
         }
